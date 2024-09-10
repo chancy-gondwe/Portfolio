@@ -27,7 +27,7 @@
     --title-color: hsl(228, 8%, 95%);
     --text-color: hsl(228, 8%, 65%);
     --body-color: hsl(228, 15%, 20%);
-    --container-color: hsl(228, 15%, 15%);
+    --container-color: hsl(228, 11%, 18%);
     /*=============== font and typography ========*/
     /*.5em = 8px | 1rem= 16px ...*/
     --body-font: "Poppins", sans-serif;
@@ -373,7 +373,7 @@ span {
 /*--- ============== About ===========*/
 
 .about--container {
-    row-gap: 2.5rem;
+    row-gap: 2rem;
     height: vh;
 }
 
@@ -424,7 +424,9 @@ span {
 }
 
 .skills--group {
-    row-gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
     list-style: decimal-leading-zero;
 }
 
@@ -702,13 +704,25 @@ span {
 @media screen and (max-width: 320px) {
     .container {
         margin-inline: 1rem;
+        padding: 1rem;
     }
+    .skills--data,
     .skills--content {
         grid-template-columns: max-content;
         row-gap: 1rem;
+        padding: 0.5rem;
     }
     .services--card {
         padding-block: 1.5rem;
+    }
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .section-subtitle {
+        font-size: 1.25rem;
+    }
+    .skills--item {
+        font-size: 0.875rem;
     }
 }
 
@@ -734,7 +748,7 @@ span {
     .home--container,
     .about--container,
     .skills--container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         align-items: center;
     }
     .home--data,
@@ -833,7 +847,9 @@ span {
         margin-bottom: 3rem;
     }
     .skills--content {
-        column-gap: 8rem;
+        grid-template-columns: 1fr;
+        /* Single column for smaller screens */
+        column-gap: 1rem;
     }
     .skills--group {
         row-gap: 1.5rem;
